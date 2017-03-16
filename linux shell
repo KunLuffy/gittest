@@ -1,1 +1,39 @@
 1、脚本格式
+起始行#!/bin/sh，告诉shell用什么命令解析脚本
+
+2、变量
+变量经常用到的有4种：本地变量和环境变量
+（1）本地变量
+定义和赋值：
+variable-name=value 设置实际值到variable-name
+其他赋值方式
+variable-name+value 如果设置了variable-name，则重设其值
+variable-name:?value 如果未设置variable-name，显示未定义用户错误信息
+variable-name?value 如果未设置variable-name，显示系统错误信息
+variable-name:=value 如果未设置variable-name，设置其值
+variable-name:-value 同上，但是取值并不设置到variable-name，可以被替换
+引用：
+${variable-name}
+清除：
+unset variable-name
+设置成只读：
+readonly variable-name
+（2）环境变量
+永久设置的方法是在/etc/profile中设置
+临时设置的方法是用export到处本地变量：export variable-name
+一些固定的环境变量：使用set命令可以查看所有环境变量
+CDPATH：cd一个目录时首先搜索CDPATH
+EXINIT：vi编辑器初始化选项
+HOME：用户目录
+IFS：缺省分隔符
+LOGNAME：登录名
+（3）位置变量
+$0~$9：命令参数，$0命令本身，$1~$9传递给命令的参数
+（4）特定命令参数，7个
+$# 传递到脚本的参数个数
+$* 以一个单字符串显示所有向脚本传递的参数。与位置变量不同，此选项参数可超过9个
+$$ 脚本运行的当前进程ID号
+$! 后台运行的最后一个进程的进程ID号
+$@ 与$#相同，但是使用时加引号，并在引号中返回每个参数
+$- 显示shell使用的当前选项，与set命令功能相同
+$? 显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误。
