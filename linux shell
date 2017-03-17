@@ -10,7 +10,7 @@ variable-name=value 设置实际值到variable-name
 variable-name+value 如果设置了variable-name，则重设其值
 variable-name:?value 如果未设置variable-name，显示未定义用户错误信息
 variable-name?value 如果未设置variable-name，显示系统错误信息
-variable-name:=value 如果未设置variable-name，设置其值
+variable-name:=value 如果未设置variable-name，设置其值。${variable-name}被替换为value。
 variable-name:-value 同上，但是取值并不设置到variable-name，可以被替换
 引用：
 ${variable-name}
