@@ -48,6 +48,7 @@ $? 显示最后命令的退出状态。0表示没有错误，其他任何值表�
 http://www.jb51.net/article/60326.htm
 
 一些常用的正则表达式场景
+元表达式
 1、[]：指定字符范围。如想匹配483和484两个字符串，正则表达式48[34]。
 2、.：匹配任意字符数量和.的数量一致
 3、*：表示匹配*之前的单字符0次或者多次。
@@ -57,3 +58,7 @@ http://www.jb51.net/article/60326.htm
 7、pattern\{n\} 只用来匹配前面pattern出现次数。n为次数
 8、pattern\{n,\} n只含义同上，但次数最少为n
 9、pattern\{n,m\} 只含义同上，但pattern出现次数在n与m之间
+关系表达式
+1、|：关系或
+2、()：组
+http://baike.baidu.com/link?url=6GeE1l3TTElDScDARUl67d5vOMW1IaTSMY-oAHrbU6xLWO-WC3S_qMkJXtMxrH9aX5d3eP-GW5rm4xZWJ4hyZhvjJuVoUelM1HFOxm9prh18hKFSsjcbag7H0J72b0_VO9hPfbDOxsI3sWpS-30F6_
