@@ -55,5 +55,5 @@ http://www.jb51.net/article/60326.htm
 5、$：匹配行尾，如[34]$，匹配行尾是3或者4的行
 6、\：转义字符，将正则表达式的字符转义成普通字符
 7、pattern\{n\} 只用来匹配前面pattern出现次数。n为次数
-8、pattern\{n,\} m只含义同上，但次数最少为n
+8、pattern\{n,\} n只含义同上，但次数最少为n
 9、pattern\{n,m\} 只含义同上，但pattern出现次数在n与m之间
