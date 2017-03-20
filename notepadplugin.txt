@@ -1,0 +1,5 @@
+1、开发概述
+np++的plugin以dll方式提供
+插件使用windows message system，通过注册的3个窗口句柄和np++交互：主NotePad++窗口句柄和2个Scintilla窗口句柄
+支持C/Delphi/VB/Oberon等可以和C交互的开发语言
+两种字符模式的插件：ANSI模式和Unicode模式，只能和对应模式的NotePad++兼容
