@@ -1,1 +1,5 @@
+linux内核开发新手入门
 https://kernelnewbies.org/
+
+linux bugzilla
+https://bugzilla.kernel.org/
