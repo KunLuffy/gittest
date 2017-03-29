@@ -1,0 +1,51 @@
+1、概要
+非交互性的文本编辑工具
+支持从标准输入和文件导出的文件拷贝编辑内容
+提取部分内容，支持行匹配、正则表达式匹配
+增加内容
+删除内容
+替换内容
+
+2、命令
+sed命令有两种格式
+第一种：sed [option] cmd input-file
+第二种：sed [option] -f cmd-file input-file
+sed命令的批处理方式
+file.sed [option] input-file
+cmd：包含两部分，匹配和处理。
+
+（1）提取内容
+提取内容有三种方式
+
+第一种按行提取
+option：-n -- 只输出匹配行
+cmd：
+匹配有三种方式
+x -- 提取x行的内容
+x,y -- 提取x到y行的内容
+x,y! -- 不匹配x到y之间的行。还有一些常用的匹配参数：$ -- 尾行
+处理参数，p -- 打印匹配行
+如：
+显示test.txt第3行的内容：sed -n '3p' test.txt
+显示test.txt第2行到第5行的内容：sed -n '2,5p' test.txt
+
+第二种按正则表达式提取
+cmd的匹配方式，
+/pattern/ -- pattern是一个正则表达式
+
+第三种 按行和正则表达式混合匹配
+/pattern/,x -- 
+x,/pattern/ -- 匹配从x行开始到第一个匹配到pattern的行
+
+（2）附加文本：支持给指定一行增加或者所有行都附加，不支持仅给部分行附加
+处理参数：a\
+格式[address]a\text\text1\text2\...  支持附加多行，\表示换行
+
+（3）插入文本
+处理参数：i\
+格式[address]i\text\text1\text2\...  支持插入多行，\表示换行
+和a\参数区别仅是一个在行首一个在行尾？
+
+（4）修改文本
+处理参数：c\
+格式[address]c\text\text2\text3\...  将指定行替换成c\之后的文本，\表示换行
