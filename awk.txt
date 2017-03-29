@@ -1,0 +1,7 @@
+1、概述
+awk用于格式化报文或者从文本文件中抽取数据包
+
+2、使用方法
+（1）命令行：awk [-F separator] 'commands' input-file
+（2）批处理：首行使用#!/bin/awk -f说明的批处理文件。命令格式：xxx.awk input-file
+（3）awk脚本：命令格式awk -f xxx.awk input-file
