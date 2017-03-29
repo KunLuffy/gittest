@@ -46,6 +46,31 @@ x,/pattern/ -- 匹配从x行开始到第一个匹配到pattern的行
 格式[address]i\text\text1\text2\...  支持插入多行，\表示换行
 和a\参数区别仅是一个在行首一个在行尾？
 
-（4）修改文本
+（4）修改文本：将指定的行用新的文本代替
 处理参数：c\
 格式[address]c\text\text2\text3\...  将指定行替换成c\之后的文本，\表示换行
+
+（5）删除文本：删除指定的一行文本
+处理参数：d
+格式[address]d  删除匹配到的行，如果address未指定，则删除所有行
+
+（6）替换文本：不同于修改文本，此命令仅替换匹配到的文本
+处理参数：s
+格式[address] s/pattern-to-find/pattern-for-replacement/[g p w n]
+缺省替换第一次匹配到的文本
+g：全局替换所有匹配到的文本
+p：使-n选项失效，不再输出结果
+w 文件名：将输出重定向到一个文件。sed只输出匹配到修改的行，其余行并不输出。
+&：用在pattern-for-replacement中，表示pattern-to-find字符串。
+
+（7）插入另一个文件的内容
+处理参数：r 文件名
+格式[address] r 文件名
+
+（8）匹配后退出
+处理参数：q
+格式：[address] q
+
+（9）显示控制字符
+处理参数：l
+格式：[address] l
