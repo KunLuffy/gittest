@@ -7,6 +7,12 @@ commands部分可以提取出来作为脚本，awk脚本有如下两种使用方
 （2）批处理：首行使用#!/bin/awk -f说明的批处理文件。命令格式：xxx.awk input-file
 （3）awk脚本：命令格式awk -f xxx.awk input-file
 当未指定separator时，默认空格为分隔符
+shell的变量可以在awk命令中直接使用
+向awk命令或者脚本传递值
+awk [-F separator] 'commands' VAR=value input-file
+awk -f xxx.awk VAR=value input-file
+xxx.awk VAR=value input-file
+VAR可以在awk命令中使用
 
 3、模式和动作
 所有awk commands都有模式和动作两部分组成。
@@ -74,3 +80,10 @@ sprint(fmt,exp)：返回经fmt格式化的exp
 sub(r,s)：用$0中最左边最长的的子串代替s
 substr(s,p)：返回字符串s中从p开始的后缀部分
 substr(s,p,n)：返回字符串s中从p开始长度为n的后缀部分
+printf(s, p1, p2, ...)：用法和C语言一样
+
+7、awk的条件、循环语句
+（1）if
+if(exp) do_sth
+（2）For
+For (index in array) print array[index]
