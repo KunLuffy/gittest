@@ -1,0 +1,4 @@
+1、pci driver
+module_pci_driver(driver): 定义在include/linux/pci.h头文件中，用于创建驱动模块初始化和去初始化接口。该宏封装了pci_register_driver和pci_unregister_driver函数，用于pci驱动的注册和解注册。。
+调用module_driver(__driver, __register, __unregister, ...)宏创建module_init和module_exit所需要执行的函数。
+
