@@ -1,5 +1,6 @@
 usb_init()
 1、创建debugfs：usb/devices，支持read和poll
 2、注册acpi电源管理：
-3、注册bus：注册usb总线类型，总线提供name，匹配方法，uevent
-4、注册bus_notifier
+3、注册bus：注册usb总线类型，总线提供name，匹配方法，uevent（内核通知用户进程机制）
+4、注册bus_notifier：注册ADD/DEL事件通知机制
+5、注册usb设备：
